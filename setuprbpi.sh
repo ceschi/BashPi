@@ -22,7 +22,7 @@ sudo rm teamviewer-host_armhf.deb
 
 cd
 
-sudo apt-get install libnlopt-dev r-base octave dynare gnuplot ssmtp r-cran-rjava sharutils r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr r-cran-r.utils -y
+sudo apt-get install libnlopt-dev r-base octave dynare gnuplot ssmtp r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr r-cran-r.utils -y
 
 # set up cran cloud mirror in R
 
