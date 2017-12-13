@@ -6,11 +6,15 @@ sudo su
 
 apt-get install ntp -y
 
+service ntp stop
+
+ntpd -gq
+
 sed -n 'H;${x;s/^\n//;s/#server .*$/server ntp.ens.fr\n&/;p}' /etc/ntp.conf 
 
 timedatectl set-timezone Europe/Paris
 
-service ntp restart
+service ntp start
 
 cd /home/pi/Desktop
 
