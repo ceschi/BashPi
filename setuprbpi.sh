@@ -18,7 +18,7 @@ cd /home/pi/Desktop
 
 apt-get install openjdk-8-jre:armhf -y
 
-wget http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-linux-arm32-vfp-hflt.tar.gz
+wget https://www.dropbox.com/s/ofv5rnh2hssgycu/jdk-8u152-linux-arm32-vfp-hflt.tar.gz
 
 tar zxvf jdk-8u152-linux-arm32-vfp-hflt.tar.gz -C /home/pi/Desktop
 
@@ -39,7 +39,7 @@ rm teamviewer-host_armhf.deb
 
 cd
 
-apt-get install libnlopt-dev r-base octave dynare gnuplot ssmtp r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr r-cran-r.utils -y
+apt-get install libnlopt-dev r-base octave dynare gnuplot ssmtp r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev r-cran-r.utils libcurl4-openssl-dev -y
 
 # set up cran cloud mirror in R
 
@@ -48,7 +48,22 @@ local({
   r <- getOption("repos")
   r["CRAN"] <- "https://cloud.r-project.org//"
   options(repos = r)
-}' >> /etc/R/Rprofile.site
+})' >> /etc/R/Rprofile.site
+
+# install devtools
+
+R -q -e "install.packages("devtools")"
+
+# get certificates from Philly FED
+mkdir /usr/share/ca-certificates/local
+
+cd /usr/share/ca-certificates/local
+
+wget https://entrust.com/root-certificates/entrust_l1k.cer
+
+openssl x509 -inform PEM  -in entrust_l1k.cer -outform PEM -out entrust_l1k.crt
+
+dpkg-reconfigure ca-certificates
 
 # setup folders and repositories
 
