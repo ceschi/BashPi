@@ -43,7 +43,7 @@ rm teamviewer-host_armhf.deb
 
 cd
 
-apt-get install libnlopt-dev r-base octave dynare gnuplot ssmtp r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev r-cran-r.utils libcurl4-openssl-dev -y
+apt-get install libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev r-cran-r.utils libcurl4-openssl-dev mailutils -y
 
 # set up cran cloud mirror in R
 
@@ -68,6 +68,18 @@ wget https://entrust.com/root-certificates/entrust_l1k.cer
 openssl x509 -inform PEM  -in entrust_l1k.cer -outform PEM -out entrust_l1k.crt
 
 dpkg-reconfigure ca-certificates
+
+# setting up email account in clear
+
+sed -n -i.backup -e '/mailhub/d' /etc/ssmtp/ssmtp.conf
+
+echo '
+AuthUser=databerry31@gmail.com
+AuthPass=senddata
+FromLineOverride=YES
+mailhub=smtp.gmail.com:465
+UseSTARTTLS=YES
+'>> /etc/ssmtp/ssmtp.conf
 
 # setup folders and repositories
 
