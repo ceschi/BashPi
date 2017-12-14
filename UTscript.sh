@@ -8,8 +8,14 @@ sudo Rscript mainTaylor.R
 
 cd Plots/
 
-sudo zip -r results.zip ~/Desktop/R/UnemplTaylor/Plots | uuencode results.zip | ssmtp emanuele.franceschi@gmail.com
+sudo zip -r results.zip ~/Desktop/R/UnemplTaylor/Plots 
 
-cd
+echo 'The results from last run of the TR study' | mailx -s 'Monthly estimates' -A results.zip emanuele.franceschi@gmail.com
+
+cd ..
+
+sudo rm -r Plots/
+sudo rm -r Processed\ data/
+sudo rm -r Downloaded\ files/
 
 exit
