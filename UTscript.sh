@@ -3,7 +3,7 @@ cd
 
 cd /home/pi/Desktop/R/UnemplTaylor/
 
-sudo git pull master origin
+sudo git pull 
 
 sudo Rscript mainTaylor.R
 
