@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+cd
 
-cd /Desktop/R/UnemplTaylor/
+cd /home/pi/Desktop/R/UnemplTaylor/
 
 sudo git pull master origin
 
