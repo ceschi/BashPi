@@ -54,6 +54,12 @@ local({
   options(repos = r)
 })' >> /etc/R/Rprofile.site
 
+# switch to gnuplot for Octave
+
+echo '
+graphics_toolkit("gnuplot")
+' > ~/.octaverc
+
 # install devtools
 
 R -q -e "install.packages("devtools")"
