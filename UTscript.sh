@@ -15,8 +15,8 @@ echo 'The results from last run of the TR study' | mailx -s 'Monthly estimates' 
 
 cd ..
 
-sudo rm -r Plots/
-sudo rm -r Processed\ data/
-sudo rm -r Downloaded\ files/
+# sudo rm -r Plots/
+# sudo rm -r Processed\ data/
+# sudo rm -r Downloaded\ files/
 
 exit
