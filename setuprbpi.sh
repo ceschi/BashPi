@@ -1,53 +1,53 @@
 sudo apt-get update && sudo apt-get upgrade
 
-sudo su
+
 
 # setup ntp for PSE
 
-apt-get install ntp -y
+sudo apt-get install ntp -y
 
-service ntp stop
+sudo service ntp stop
 
-ntpd -gq
+sudo ntpd -gq
 
-sed -n 'H;${x;s/^\n//;s/#server .*$/server ntp.ens.fr\n&/;p}' /etc/ntp.conf 
+sudo sed -n 'H;${x;s/^\n//;s/#server .*$/server ntp.ens.fr\n&/;p}' /etc/ntp.conf 
 
-timedatectl set-timezone Europe/Paris
+sudo timedatectl set-timezone Europe/Paris
 
-service ntp start
+sudo service ntp start
 
 cd /home/pi/Desktop
 
 # java fixing stuff
 
-apt-get install openjdk-8-jre:armhf -y
+sudo apt-get install openjdk-8-jre:armhf -y
 
 wget https://www.dropbox.com/s/ofv5rnh2hssgycu/jdk-8u152-linux-arm32-vfp-hflt.tar.gz
 
-tar zxvf jdk-8u152-linux-arm32-vfp-hflt.tar.gz -C /home/pi/Desktop
+sudo tar zxvf jdk-8u152-linux-arm32-vfp-hflt.tar.gz -C /home/pi/Desktop
 
-mkdir /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
+sudo mkdir /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
 
-cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/arm/server/libjvm.so /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
+sudo cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/arm/server/libjvm.so /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
 
 # download and install Teamviewer
 
 wget https://download.teamviewer.com/download/linux/teamviewer-host_armhf.deb
 
 # installation must be performed manually!
-dpkg teamviewer-host_armhf.deb
+sudo dpkg teamviewer-host_armhf.deb
 
-rm teamviewer-host_armhf.deb
+sudo rm teamviewer-host_armhf.deb
 
 # installing plenty of stuff
 
 cd
 
-apt-get install libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev r-cran-r.utils libcurl4-openssl-dev mailutils -y
+sudo apt-get install libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev r-cran-r.utils libcurl4-openssl-dev mailutils -y
 
 # set up cran cloud mirror in R
 
-echo '
+sudo echo '
 local({
   r <- getOption("repos")
   r["CRAN"] <- "https://cloud.r-project.org//"
@@ -56,30 +56,30 @@ local({
 
 # switch to gnuplot for Octave
 
-echo '
+sudo echo '
 graphics_toolkit("gnuplot")
 ' > ~/.octaverc
 
 # install devtools
 
-R -q -e "install.packages("devtools")"
+sudo R -q -e "install.packages("devtools")"
 
 # get certificates from Philly FED
-mkdir /usr/share/ca-certificates/local
+sudo mkdir /usr/share/ca-certificates/local
 
 cd /usr/share/ca-certificates/local
 
 wget https://entrust.com/root-certificates/entrust_l1k.cer
 
-openssl x509 -inform PEM  -in entrust_l1k.cer -outform PEM -out entrust_l1k.crt
+sudo openssl x509 -inform PEM  -in entrust_l1k.cer -outform PEM -out entrust_l1k.crt
 
-dpkg-reconfigure ca-certificates
+sudo dpkg-reconfigure ca-certificates
 
 # setting up email account in clear
 
-sed -n -i.backup -e '/mailhub/d' /etc/ssmtp/ssmtp.conf
+sudo sed -n -i.backup -e '/mailhub/d' /etc/ssmtp/ssmtp.conf
 
-echo '
+sudo echo '
 AuthUser=databerry31@gmail.com
 AuthPass=senddata
 FromLineOverride=YES
@@ -99,21 +99,19 @@ cd R/
 
 git init
 
-git clone https://github.com/ceschi/UnemplTaylor/
+sudo git clone https://github.com/ceschi/UnemplTaylor/
 
 cd UnemplTaylor/
 
-git pull origin master
+sudo git pull origin master
 
 cd .. && cd OctDyn
 
 git init 
 
-git clone https://github.com/ceschi/DTC/
+sudo git clone https://github.com/ceschi/DTC/
 
-git clone https://github.com/JohannesPfeifer/DSGE_mod
-
-exit
+sudo git clone https://github.com/JohannesPfeifer/DSGE_mod
 
 sudo apt-get update && sudo apt-get upgrade -y
 
