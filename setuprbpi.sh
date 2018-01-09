@@ -80,8 +80,8 @@ sudo dpkg-reconfigure ca-certificates
 sudo sed -n -i.backup -e '/mailhub/d' /etc/ssmtp/ssmtp.conf
 
 sudo echo '
-AuthUser=databerry31@gmail.com
-AuthPass=senddata
+AuthUser=
+AuthPass=
 FromLineOverride=YES
 mailhub=smtp.gmail.com:465
 UseSTARTTLS=YES
