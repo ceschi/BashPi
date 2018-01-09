@@ -9,9 +9,11 @@ sudo Rscript mainTaylor.R
 
 cd Plots/
 
-sudo zip -r results.zip ~/Desktop/R/UnemplTaylor/Plots 
+sudo zip -r results.zip .
 
 echo 'The results from last run of the TR study' | mailx -s 'Monthly estimates' -A results.zip emanuele.franceschi@gmail.com
+
+sudo rm results.zip
 
 cd ..
 
