@@ -17,6 +17,12 @@ sudo rm results.zip
 
 cd ..
 
+cd /var/www/html/files/
+
+sudo zip -r US_macro_data.zip /home/pi/Desktop/R/UnemplTaylor/Processed\ data/*.txt
+
+sudo zip data.zip /home/pi/Desktop/R/UnemplTaylor/Readme_data.pdf
+
 # sudo rm -r Plots/
 # sudo rm -r Processed\ data/
 # sudo rm -r Downloaded\ files/
