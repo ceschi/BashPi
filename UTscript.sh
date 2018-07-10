@@ -11,11 +11,11 @@ sudo Rscript mainTaylor.R
 
 # sudo zip -r results.zip .
 
-echo '  ' | mailx -s 'TR database and estimates updated' emanuele.franceschi@gmail.com
+echo ' ' | mailx -s 'TR database and estimates updated' emanuele.franceschi@gmail.com
 
 # sudo rm results.zip
 
-cd ..
+cd ~
 
 cd /var/www/html/files/
 
