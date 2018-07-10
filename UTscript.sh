@@ -7,13 +7,13 @@ sudo git pull
 
 sudo Rscript mainTaylor.R
 
-cd Plots/
+# cd Plots/
 
-sudo zip -r results.zip .
+# sudo zip -r results.zip .
 
-echo 'The results from last run of the TR study' | mailx -s 'Monthly estimates' -A results.zip emanuele.franceschi@gmail.com
+echo '  ' | mailx -s 'TR database and estimates updated' emanuele.franceschi@gmail.com
 
-sudo rm results.zip
+# sudo rm results.zip
 
 cd ..
 
@@ -27,4 +27,4 @@ sudo zip data.zip /home/pi/Desktop/R/UnemplTaylor/Readme_data.pdf
 # sudo rm -r Processed\ data/
 # sudo rm -r Downloaded\ files/
 
-exit
+# exit
