@@ -81,13 +81,16 @@ sudo sed -n -i.backup -e '/mailhub/d' /etc/ssmtp/ssmtp.conf
 
 # add a way to ask address and pwd so to make code safe
 
-sudo echo '
-AuthUser=
-AuthPass=
+read -p 'Mail username: ' uservar
+read -p 'Mail password: ' userpwd
+
+sudo echo "
+AuthUser= $uservar
+AuthPass= $userpwd
 FromLineOverride=YES
 mailhub=smtp.gmail.com:465
 UseSTARTTLS=YES
-'>> /etc/ssmtp/ssmtp.conf
+">> /etc/ssmtp/ssmtp.conf
 
 # setup folders and repositories
 
