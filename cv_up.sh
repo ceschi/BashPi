@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /home/pi/Desktop/tex/
+cd /home/pi/Desktop/tex/cv/
 
 texliveonfly -c xelatex cv_acc_EN.tex
 
