@@ -3,6 +3,8 @@ cd
 
 cd /home/pi/Desktop/R/UnemplTaylor/
 
+sudo rm -r ./Plots/*.*
+
 sudo git pull 
 
 sudo Rscript mainTaylor.R
