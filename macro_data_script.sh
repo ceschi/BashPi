@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 cd
 
-cd /home/pi/Desktop/R/US_macro_data/
+cd /home/pi/Desktop/R/us_macro_data/
 
 sudo rm -r ./Plots/*.*
 
@@ -15,6 +15,6 @@ cd ~
 
 cd /var/www/html/files/
 
-sudo zip -r US_macro_data.zip /home/pi/Desktop/R/US_macro_data/Processed\ data/*.txt
+sudo zip -r US_macro_data.zip /home/pi/Desktop/R/us_macro_data/Processed\ data/*.txt
 
-sudo zip data.zip /home/pi/Desktop/R/US_macro_data/Readme_data.pdf
+sudo zip data.zip /home/pi/Desktop/R/us_macro_data/Readme_data.pdf
