@@ -11,10 +11,4 @@ sudo Rscript main.R
 
 echo ' ' | mailx -s 'TR database and estimates updated' emanuele.franceschi@gmail.com
 
-cd ~
-
-cd /var/www/html/files/
-
-sudo zip -r US_macro_data.zip /home/pi/Desktop/R/us_macro_data/Processed\ data/*.txt
-
-sudo zip data.zip /home/pi/Desktop/R/us_macro_data/Readme_data.pdf
+sudo zip /var/www/html/files/us_macro_data.zip ./Processed\ data/*.txt -j
