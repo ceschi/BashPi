@@ -9,7 +9,7 @@ sudo git pull
 
 sudo Rscript main.R
 
-texliveonfly -c ~/Desktop/tex/us_plot/plots.tex
+texliveonfly ~/Desktop/tex/us_plot/plots.tex
 
 echo ' ' | mailx -s 'TR database and estimates updated' -A ~/Desktop/R/tex/us_plot/plots.pdf emanuele.franceschi@gmail.com
 
