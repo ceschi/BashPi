@@ -15,7 +15,7 @@ sudo zip /var/www/html/files/us_macro_data.zip ./Processed\ data/*.txt -j
 
 cd ~/Desktop/tex/us_plot/
 
-texliveonfly ~/Desktop/tex/us_plot/plots.tex
+texliveonfly plots.tex
 
 sudo cp /home/pi/Desktop/tex/us_plot/plots.pdf /var/www/html/files/us_plots.pdf
 
