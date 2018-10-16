@@ -17,7 +17,7 @@ cd ~/Desktop/tex/us_plot/
 
 texliveonfly plots.tex
 
-sudo mv /home/pi/Desktop/tex/us_plot/plots.pdf /var/www/html/files/us_plots.pdf
+sudo cp /home/pi/Desktop/tex/us_plot/plots.pdf /var/www/html/files/us_plots.pdf
 
 echo ' ' | mailx -s 'TR database and estimates updated' -A ~/Desktop/tex/us_plot/plots.pdf emanuele.franceschi@gmail.com
 
