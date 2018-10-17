@@ -19,8 +19,8 @@ cd tex_report/
 
 sudo texliveonfly plots.tex
 
-sudo cp ~/Desktop/R/us_macro_data/tex_report/plots.pdf /var/www/html/files/us_plots.pdf
+sudo cp /home/pi/Desktop/R/us_macro_data/tex_report/plots.pdf /var/www/html/files/us_plots.pdf
 
-echo ' ' | mailx -s 'TR database and estimates updated' -A ~/Desktop/R/us_macro_data/tex_report/plots.pdf emanuele.franceschi@gmail.com
+echo ' ' | mailx -s 'TR database and estimates updated' -A /home/pi/Desktop/R/us_macro_data/tex_report/plots.pdf emanuele.franceschi@gmail.com
 
-echo 'Script executed - mail received?' > ~/Desktop/db_script.log
+echo 'Script executed - mail received?' > /home/pi/Desktop/db_script.log
