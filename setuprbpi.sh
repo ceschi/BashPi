@@ -1,4 +1,4 @@
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade -y
 
 
 
@@ -22,6 +22,14 @@ cd /home/pi/Desktop
 
 sudo apt-get install openjdk-8-jre:armhf -y
 
+echo '
+
+===========================================================================
+				errors produced but it is ok
+===========================================================================
+
+'
+
 wget https://www.dropbox.com/s/ofv5rnh2hssgycu/jdk-8u152-linux-arm32-vfp-hflt.tar.gz
 
 sudo tar zxvf jdk-8u152-linux-arm32-vfp-hflt.tar.gz -C /home/pi/Desktop
@@ -35,7 +43,7 @@ sudo cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/arm/server/libjvm.so /usr/lib/jvm/
 wget https://download.teamviewer.com/download/linux/teamviewer-host_armhf.deb
 
 # installation must be performed manually!
-sudo dpkg teamviewer-host_armhf.deb
+sudo dpkg --install teamviewer-host_armhf.deb
 
 sudo rm teamviewer-host_armhf.deb
 
@@ -119,5 +127,12 @@ sudo git clone https://github.com/ceschi/DTC/
 sudo git clone https://github.com/JohannesPfeifer/DSGE_mod
 
 sudo apt-get update && sudo apt-get upgrade -y
+
+echo ' 
+====================================================================
+						process terminated!
+====================================================================
+
+'
 
 exit
