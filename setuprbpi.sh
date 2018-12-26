@@ -50,14 +50,14 @@ sudo cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/arm/server/libjvm.so /usr/lib/jvm/
 
 wget https://download.teamviewer.com/download/linux/teamviewer-host_armhf.deb
 
+sudo apt --fix-broken install -y
+
 # installation must be performed manually!
 sudo dpkg --install teamviewer-host_armhf.deb
 
 sudo rm teamviewer-host_armhf.deb
 
 # installing plenty of stuff
-
-sudo apt --fix-broken install
 
 cd
 
@@ -139,10 +139,14 @@ sudo git clone https://github.com/JohannesPfeifer/DSGE_mod
 sudo apt-get update && sudo apt-get upgrade -y
 
 echo ' 
+
+
+
+====================================================================
 ====================================================================
 						process terminated!
 ====================================================================
-
+====================================================================
 '
 
 exit
