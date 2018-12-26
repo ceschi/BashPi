@@ -24,9 +24,17 @@ sudo apt-get install openjdk-8-jre:armhf -y
 
 echo '
 
+
+
+
+
 ===========================================================================
 				errors produced but it is ok
 ===========================================================================
+
+
+
+
 
 '
 
@@ -48,6 +56,8 @@ sudo dpkg --install teamviewer-host_armhf.deb
 sudo rm teamviewer-host_armhf.deb
 
 # installing plenty of stuff
+
+sudo apt --fix-broken install
 
 cd
 
