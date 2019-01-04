@@ -44,7 +44,7 @@ sudo tar zxvf jdk-8u152-linux-arm32-vfp-hflt.tar.gz -C /home/pi/Desktop
 
 sudo mkdir /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
 
-sudo cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/arm/server/libjvm.so /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
+sudo cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/acd rm/server/libjvm.so /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
 
 # download and install Teamviewer
 
@@ -61,7 +61,7 @@ sudo rm teamviewer-host_armhf.deb
 
 cd
 
-sudo apt-get install libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev r-cran-r.utils mailutils -y
+sudo apt-get install libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils -y #  libcurl4-gnutls-dev
 
 # set up cran cloud mirror in R
 
@@ -118,17 +118,18 @@ cd Desktop/
 
 mkdir R && mkdir OctDyn
 
-cd R/
+# cd R/
 
-git init
+# git init
 
-sudo git clone https://github.com/ceschi/UnemplTaylor/
+# sudo git clone https://github.com/ceschi/UnemplTaylor/
 
-cd UnemplTaylor/
+# cd UnemplTaylor/
 
-sudo git pull origin master
+# sudo git pull origin master
 
-cd .. && cd OctDyn
+# cd .. && 
+cd OctDyn
 
 git init 
 
