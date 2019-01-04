@@ -57,6 +57,8 @@ sudo dpkg --install teamviewer-host_armhf.deb
 
 sudo rm teamviewer-host_armhf.deb
 
+sudo apt --fix-broken install -y
+
 # installing plenty of stuff
 
 cd
@@ -99,7 +101,7 @@ sudo sed -n -i.backup -e '/mailhub/d' /etc/ssmtp/ssmtp.conf
 
 # add a way to ask address and pwd so to make code safe
 
-read -p 'Mail username: ' uservar
+read -p 'Mail address (full): ' uservar
 read -p 'Mail password: ' userpwd
 
 sudo echo "
