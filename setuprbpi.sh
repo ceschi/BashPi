@@ -44,7 +44,7 @@ sudo tar zxvf jdk-8u152-linux-arm32-vfp-hflt.tar.gz -C /home/pi/Desktop
 
 sudo mkdir /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
 
-sudo cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/acd rm/server/libjvm.so /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
+sudo cp /home/pi/Desktop/jdk1.8.0_152/jre/lib/arm/server/libjvm.so /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/server/
 
 # download and install Teamviewer
 
