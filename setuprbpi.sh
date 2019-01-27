@@ -38,6 +38,10 @@ echo '
 
 '
 
+# for R consider downloading source codes from https://stat.ethz.ch/R/daily/R-patched.tar.gz and then
+# compile the code locally on the RPi : check https://www.raspberrypi.org/forums/viewtopic.php?t=221861
+# https://github.com/r-lib/fs/issues/128	https://github.com/r-lib/fs/issues/128#issuecomment-435552967
+
 wget https://www.dropbox.com/s/ofv5rnh2hssgycu/jdk-8u152-linux-arm32-vfp-hflt.tar.gz
 
 sudo tar zxvf jdk-8u152-linux-arm32-vfp-hflt.tar.gz -C /home/pi/Desktop
@@ -63,7 +67,7 @@ sudo apt --fix-broken install -y
 
 cd
 
-sudo apt-get install libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils -y #  libcurl4-gnutls-dev
+sudo apt-get install -y libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils libcairo-script-interpreter2 libcairo2-dev libfontconfig1-dev libpixman-1-dev libxcb-shm0-dev libxrender-dev libzstd-dev libzstd1 screen x11proto-render-dev xvfb #  libcurl4-gnutls-dev
 
 # set up cran cloud mirror in R
 
