@@ -10,7 +10,7 @@ sudo service ntp stop
 
 sudo ntpd -gq
 
-sudo sed -n 'H;${x;s/^\n//;s/#server .*$/server ntp.ens.fr\n&/;p}' /etc/ntp.conf 
+sudo sed -i -n 'H;${x;s/^\n//;s/#server .*$/server ntp.ens.fr\n&/;p}' /etc/ntp.conf 
 
 sudo timedatectl set-timezone Europe/Paris
 
