@@ -1,6 +1,4 @@
-sudo apt-get update && sudo apt-get upgrade -y
-
-
+sudo apt update && sudo apt upgrade -y
 
 # setup ntp for PSE
 
@@ -8,9 +6,9 @@ sudo apt-get install ntp -y
 
 sudo service ntp stop
 
-sudo ntpd -gq
+sudo sed -i -n 'H;${x;s/^\n//;s/#server .*$/server ntp.ens.fr\n&/;p}' /etc/ntp.conf
 
-sudo sed -i -n 'H;${x;s/^\n//;s/#server .*$/server ntp.ens.fr\n&/;p}' /etc/ntp.conf 
+sudo ntpd -gq
 
 sudo timedatectl set-timezone Europe/Paris
 
@@ -21,22 +19,6 @@ cd /home/pi/Desktop
 # java fixing stuff
 
 sudo apt-get install openjdk-8-jre:armhf -y
-
-echo '
-
-
-
-
-
-===========================================================================
-				errors produced but it is ok
-===========================================================================
-
-
-
-
-
-'
 
 # for R consider downloading source codes from https://stat.ethz.ch/R/daily/R-patched.tar.gz and then
 # compile the code locally on the RPi : check https://www.raspberrypi.org/forums/viewtopic.php?t=221861
@@ -84,16 +66,24 @@ sudo echo '
 graphics_toolkit("gnuplot")
 ' > ~/.octaverc
 
-# install devtools
+# install fixed fs, fix Makevars file, install it and then devtools
 
-sudo R -q -e "install.packages("devtools")"
+sudo wget https://cran-r.c3sl.ufpr.br/src/contrib/fs_1.2.6.tar.gz
+
+sudo tar xzvf fs_1.2.6.tar.gz
+
+sudo sed -i '/ifeq ($(UNAME), Linux)/aPKG_LIBS += -pthread' fs/src/Makevars
+
+sudo R -q -e "install.packages('/home/pi/Desktop/fs', type = 'source', repos = NULL)"
+
+sudo R -q -e "install.packages('devtools')"
 
 # get certificates from Philly FED
 sudo mkdir /usr/share/ca-certificates/local
 
 cd /usr/share/ca-certificates/local
 
-wget https://entrust.com/root-certificates/entrust_l1k.cer
+sudo wget https://entrust.com/root-certificates/entrust_l1k.cer
 
 sudo openssl x509 -inform PEM  -in entrust_l1k.cer -outform PEM -out entrust_l1k.crt
 
@@ -124,36 +114,24 @@ cd Desktop/
 
 mkdir R && mkdir OctDyn
 
-# cd R/
-
-# git init
-
-# sudo git clone https://github.com/ceschi/UnemplTaylor/
-
-# cd UnemplTaylor/
-
-# sudo git pull origin master
-
-# cd .. && 
 cd OctDyn
 
-git init 
+git init
 
 sudo git clone https://github.com/ceschi/DTC/
 
 sudo git clone https://github.com/JohannesPfeifer/DSGE_mod
 
-sudo apt-get update && sudo apt-get upgrade -y
-
-echo ' 
+sudo apt update && sudo apt upgrade -y
 
 
 
-====================================================================
-====================================================================
-						process terminated!
-====================================================================
-====================================================================
-'
+# housekeeping
+sudo rm -r /home/pi/Desktop/fs
+sudo rm -r /home/pi/Desktop/jdk1.8.0_152
+sudo rm /home/pi/Desktop/teamviewer-host_armhf.deb
+sudo rm /home/pi/Desktop/fs_1.2.6.tar.gz
+sudo rm /home/pi/Desktop/jdk-8u152-linux-arm32-vfp-hflt.tar.gz
+
 
 exit
