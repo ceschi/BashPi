@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 sudo apt update && sudo apt upgrade -y
 
@@ -74,11 +74,17 @@ sudo wget https://cran-r.c3sl.ufpr.br/src/contrib/fs_1.2.6.tar.gz
 
 sudo tar xzvf fs_1.2.6.tar.gz
 
-sudo sed -i '/ifeq ($(UNAME), Linux)/aPKG_LIBS += -pthread' fs/src/Makevars
+sudo sed -i '/ifeq ($(UNAME), Linux)/aPKG_LIBS += -pthread' /home/pi/Desktop/fs/src/Makevars
 
 sudo R -q -e "install.packages('/home/pi/Desktop/fs', type = 'source', repos = NULL)"
 
 sudo R -q -e "install.packages('devtools')"
+
+sudo R -q -e "source('/homi/pi/Desktop/BashPi/pkg_utils.R); old_pax(dir = '/home/pi/Desktop/BashPi/R_installation.txt')"
+
+
+
+
 
 # get certificates from Philly FED
 sudo mkdir /usr/share/ca-certificates/local
