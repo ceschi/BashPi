@@ -1,3 +1,5 @@
+
+
 sudo apt update && sudo apt upgrade -y
 
 # setup ntp for PSE
@@ -114,7 +116,13 @@ cd Desktop/
 
 mkdir R && mkdir OctDyn
 
-cd OctDyn
+cd R 
+
+sudo git clone https://github.com/ceschi/us_macro_data
+
+sudo git clone https://github.com/stablemarkets/BayesianTutorials
+
+cd ../OctDyn
 
 git init
 
@@ -122,7 +130,23 @@ sudo git clone https://github.com/ceschi/DTC/
 
 sudo git clone https://github.com/JohannesPfeifer/DSGE_mod
 
+# crontab scheduler
+
+sudo echo '# m h  dom mon dow   command
+MAILTO = ""
+00 4 28 * * sudo bash /home/pi/Desktop/BashPi/macro_data_script.sh
+0 1 * * * cd /home/pi/Desktop/BashPi/ && sudo git pull
+0 7 * * * sudo bash /home/pi/Desktop/BashPi/cv_up.sh' | sudo crontab -e
+
+mkdir home/pi/Desktop/tex
+mkdir home/pi/Desktop/tex/cv
+cd home/pi/Desktop/tex/cv
+wget https://1drv.ms/u/s!Ag80lJ_0I81cgaB4Ih-p9vL4AOQ3vA
+wget https://1drv.ms/u/s!Ag80lJ_0I81cgvhrV5qCdHhOvlV3hQ
+
+
 sudo apt update && sudo apt upgrade -y
+
 
 
 
