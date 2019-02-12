@@ -1,0 +1,23 @@
+#### Packages mgmt functions ####
+
+
+
+# provides a re-usable txt list of the installed packages
+# run this function in your pre-format R installation
+pack_list <- function(){
+  pax <- as.data.frame(installed.packages())
+  pax <- as.character(pax$Package)
+  write.table(pax, file.path(getwd(),'R_installation.txt'), row.names=F, col.names=F, sep=';')
+}
+
+# takes the output of pack_list to install back all the 
+# previously installed packages
+old_pax <- function(dir = FALSE){
+	if (!dir){
+	  pax <- read.table(file.choose())
+	}
+	else{
+	  pax  <- read.table(file = dir)
+	}
+	apply(pax,1,install.packages, type = 'source')
+}
