@@ -49,7 +49,7 @@ sudo apt --fix-broken install -y
 
 # installing plenty of stuff
 
-cd
+cd ~/Desktop/
 
 sudo apt-get install -y libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils libcairo-script-interpreter2 libcairo2-dev libfontconfig1-dev libpixman-1-dev libxcb-shm0-dev libxrender-dev libzstd-dev libzstd1 screen x11proto-render-dev xvfb #  libcurl4-gnutls-dev
 
@@ -110,19 +110,17 @@ UseSTARTTLS=YES
 
 # setup folders and repositories
 
-cd
-
-cd Desktop/
+cd ~/Desktop/
 
 mkdir R && mkdir OctDyn
 
-cd R 
+cd R/
 
 sudo git clone https://github.com/ceschi/us_macro_data
 
 sudo git clone https://github.com/stablemarkets/BayesianTutorials
 
-cd ../OctDyn
+cd ../OctDyn/
 
 git init
 
@@ -138,9 +136,9 @@ MAILTO = ""
 0 1 * * * cd /home/pi/Desktop/BashPi/ && sudo git pull
 0 7 * * * sudo bash /home/pi/Desktop/BashPi/cv_up.sh' | sudo crontab -e
 
-mkdir home/pi/Desktop/tex
-mkdir home/pi/Desktop/tex/cv
-cd home/pi/Desktop/tex/cv
+mkdir /home/pi/Desktop/tex
+mkdir /home/pi/Desktop/tex/cv
+cd /home/pi/Desktop/tex/cv
 wget https://1drv.ms/u/s!Ag80lJ_0I81cgaB4Ih-p9vL4AOQ3vA
 wget https://1drv.ms/u/s!Ag80lJ_0I81cgvhrV5qCdHhOvlV3hQ
 
