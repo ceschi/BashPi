@@ -147,7 +147,12 @@ wget https://1drv.ms/u/s!Ag80lJ_0I81cgvhrV5qCdHhOvlV3hQ
 
 sudo apt update && sudo apt upgrade -y
 
+sudo apt autoremove && sudo apt autoclean
 
+echo '
+================================================================
+                     end of the game
+================================================================'
 
 
 # housekeeping
