@@ -16,7 +16,7 @@ sudo timedatectl set-timezone Europe/Paris
 
 sudo service ntp start
 
-cd /home/pi/Desktop
+cd /home/pi/Desktop/
 
 # java fixing stuff
 
@@ -43,15 +43,11 @@ sudo apt --fix-broken install -y
 # installation must be performed manually!
 sudo dpkg --install teamviewer-host_armhf.deb
 
-sudo rm teamviewer-host_armhf.deb
-
 sudo apt --fix-broken install -y
 
 # installing plenty of stuff
 
-cd ~/Desktop/
-
-sudo apt-get install -y libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils libcairo-script-interpreter2 libcairo2-dev libfontconfig1-dev libpixman-1-dev libxcb-shm0-dev libxrender-dev libzstd-dev libzstd1 screen x11proto-render-dev xvfb #  libcurl4-gnutls-dev
+sudo apt-get install -y libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils libcairo-script-interpreter2 libcairo2-dev libfontconfig1-dev libpixman-1-dev libxcb-shm0-dev libxrender-dev libzstd-dev libzstd1 screen x11proto-render-dev xvfb libudunits2-dev #  libcurl4-gnutls-dev
 
 # set up cran cloud mirror in R
 
@@ -80,7 +76,7 @@ sudo R -q -e "install.packages('/home/pi/Desktop/fs', type = 'source', repos = N
 
 sudo R -q -e "install.packages('devtools')"
 
-sudo R -q -e "source('/homi/pi/Desktop/BashPi/pkg_utils.R); old_pax(dir = '/home/pi/Desktop/BashPi/R_installation.txt')"
+sudo R -q -e "source('/home/pi/Desktop/BashPi/pkg_utils.R'); old_pax(dir = '/home/pi/Desktop/BashPi/R_installation.txt')"
 
 
 
