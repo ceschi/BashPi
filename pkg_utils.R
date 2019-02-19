@@ -26,4 +26,5 @@ old_pax <- function(dir = FALSE){
   
   update.packages(ask = F, type = 'source')
 	apply(new_pax,1,install.packages, type = 'source')
+	cat('\n\n\nPackages installation done! I installed ', NROW(new_pax), ' packages.')
 }

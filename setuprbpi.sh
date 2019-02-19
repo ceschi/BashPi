@@ -112,7 +112,7 @@ UseSTARTTLS=YES
 
 # setup folders and repositories
 
-cd ~/Desktop/
+cd /home/pi/Desktop/
 
 mkdir R && mkdir OctDyn
 
