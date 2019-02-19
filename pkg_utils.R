@@ -19,5 +19,11 @@ old_pax <- function(dir = FALSE){
 	else{
 	  pax  <- read.table(file = file.path(dir))
 	}
-	apply(pax,1,install.packages, type = 'source')
+  here_already <- data.frame(installed.packages(), row.names = NULL, stringsAsFactors = F)
+  
+  new_pax <- setdiff(here_already$Package, pax[,1])
+  new_pax <- as.data.frame(new_pax)
+  
+  update.packages(ask = F, type = 'source')
+	apply(new_pax,1,install.packages, type = 'source')
 }
