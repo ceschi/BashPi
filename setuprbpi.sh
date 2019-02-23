@@ -47,7 +47,7 @@ sudo apt --fix-broken install -y
 
 # installing plenty of stuff
 
-sudo apt-get install -y libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils libcairo-script-interpreter2 libcairo2-dev libfontconfig1-dev libpixman-1-dev libxcb-shm0-dev libxrender-dev libzstd-dev libzstd1 screen x11proto-render-dev xvfb libudunits2-dev #  libcurl4-gnutls-dev
+sudo apt-get install -y libnlopt-dev ssmtp r-base octave dynare gnuplot r-cran-rjava sharutils libxml2-dev r-cran-nloptr libssh2-1-dev r-cran-rcpp r-cran-rcppeigen r-cran-rcpparmadillo r-cran-lme4 r-cran-pbkrtest r-cran-car libssl-dev r-cran-dynlm r-cran-curl r-cran-rcurl r-base-dev r-cran-httr build-essential libcurl4-openssl-dev libxml2-dev libssl-dev r-cran-r.utils mailutils libcairo-script-interpreter2 libcairo2-dev libfontconfig1-dev libpixman-1-dev libxcb-shm0-dev libxrender-dev libzstd-dev libzstd1 screen x11proto-render-dev xvfb libudunits2-dev #  libcurl4-gnutls-dev
 
 # set up cran cloud mirror in R
 
